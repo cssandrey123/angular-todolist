@@ -33,7 +33,11 @@ export class TodosComponent implements OnInit {
     // }
     // console.log(this.todoAux);
     this.todoService.addTodo(todo).subscribe(
-      todo => {this.todos.push(todo);console.log(todo)}
+      todo => {
+        todo.id = Date.now();
+        this.todos.push(todo);
+        console.log(todo);
+      }
     );
   }
 
